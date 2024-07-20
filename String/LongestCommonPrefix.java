@@ -10,23 +10,17 @@ public class LongestCommonPrefix {
 }
 class Solution {
     public String longestCommonPrefix(String[] strs) {
+     
+        StringBuilder common = new StringBuilder();
         Arrays.sort(strs);
-        int n = strs.length;
-        String temp = strs[0];
-        int m = temp.length();
-        for (int i=1;i<n;i++){
-            String curr = strs[i];
-            int c=0,t=0;
-            while(t<m){
-                if(temp.charAt(t)!=curr.charAt(c)) break;
-                else{
-                    t++;
-                    c++;
-                } 
+        char[] first = strs[0].toCharArray();
+        char[] last = strs[strs.length-1].toCharArray();
+        for(int i=0;i<first.length;i++){
+            if(first[i]!=last[i]){
+                break;
             }
-            temp = temp.substring(0,t);
-            m = t;
+            common.append(first[i]);
         }
-        return temp;
+        return common.toString();   
     }
 }
