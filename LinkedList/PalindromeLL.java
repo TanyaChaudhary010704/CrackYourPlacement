@@ -16,7 +16,7 @@ public class PalindromeLL {
   public boolean isPalindrome(ListNode head) {
       List<Integer> list = new ArrayList<>();
       while(head != null) {
-          list.add(head.val);
+          list.add(head.data);
           head = head.next;
       }
       
